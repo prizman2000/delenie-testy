@@ -10,6 +10,15 @@ TEST(correct, expectedCorrectWork) {
     EXPECT_EQ(delit("0","334"), 0);
 }
 
+TEST(incorrect, expectedinCorrectWork) {
+
+    EXPECT_THROW(delit("","4"), std::range_error);
+
+    EXPECT_THROW(delit("-46",""), std::range_error);
+
+    EXPECT_THROW(delit("0","0"), std::invalid_argument);
+}
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

@@ -7,14 +7,11 @@ int delit(string a, string b) {
 
     int aa, bb;
 
-    if (empty(a)) {
-        throw "Отсутствует делимое!";
-
-    } else if (empty(b)) {
-        throw "Отсутствует делитель!";
+    if (empty(a) || empty(b)) {
+        throw range_error("Недостаточно данных в файле!");
 
     } else if (b == "0") {
-        throw "Делить на ноль нельзя!!";
+        throw invalid_argument("Делить на ноль нельзя!!");
     }
 
     aa = stoi(a);
